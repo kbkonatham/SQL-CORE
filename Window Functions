@@ -1,3 +1,6 @@
+https://www.sqlshack.com/use-window-functions-sql-server/
+
+
 SELECT city, SUM(order_amount) total_order_amount
 FROM [dbo].[Orders] GROUP BY city
 
