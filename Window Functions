@@ -1,0 +1,22 @@
+SELECT city, SUM(order_amount) total_order_amount
+FROM [dbo].[Orders] GROUP BY city
+
+Types of Window functions
+
+Aggregate Window Functions
+SUM(), MAX(), MIN(), AVG(). COUNT()
+
+AVG(order_amount) OVER(PARTITION BY city, MONTH(order_date)) as   average_order_amount 
+COUNT(order_id) OVER(PARTITION BY city) as total_orders
+
+Ranking Window Functions
+RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
+
+NTILE(4) OVER(ORDER BY order_amount) [row_number]
+
+Value Window Functions
+LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+
+ LAG(order_date,1)       OVER(ORDER BY order_date) prev_order_date
+ FIRST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) first_order_date,
+LAST_VALUE(order_date)   OVER(PARTITION BY city ORDER BY city) last_order_date
