@@ -47,3 +47,26 @@ ORDER BY order_by_expression
 
 <unsigned value specification> ::= 
 {  <unsigned integer literal> }
+
+
+
+UNBOUNDED PRECEDING
+Specifies that the window starts at the first row of the partition. UNBOUNDED PRECEDING can only be specified as window starting point.
+
+<unsigned value specification> PRECEDING
+Specified with <unsigned value specification>to indicate the number of rows or values to precede the current row. This specification is not allowed for RANGE.
+
+CURRENT ROW
+Specifies that the window starts or ends at the current row when used with ROWS or the current value when used with RANGE. CURRENT ROW can be specified as both a starting and ending point.
+
+BETWEEN <window frame bound > AND <window frame bound >
+Used with either ROWS or RANGE to specify the lower (starting) and upper (ending) boundary points of the window. <window frame bound> defines the boundary starting point and <window frame bound> defines the boundary end point. The upper bound cannot be smaller than the lower bound.
+
+UNBOUNDED FOLLOWING
+Specifies that the window ends at the last row of the partition. UNBOUNDED FOLLOWING can only be specified as a window end point. For example RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING defines a window that starts with the current row and ends with the last row of the partition.
+
+<unsigned value specification> FOLLOWING
+Specified with <unsigned value specification> to indicate the number of rows or values to follow the current row. When <unsigned value specification> FOLLOWING is specified as the window starting point, the ending point must be <unsigned value specification>FOLLOWING. For example, ROWS BETWEEN 2 FOLLOWING AND 10 FOLLOWING defines a window that starts with the second row that follows the current row and ends with the tenth row that follows the current row. This specification is not allowed for RANGE.
+
+unsigned integer literal
+Is a positive integer literal (including 0) that specifies the number of rows or values to precede or follow the current row or value. This specification is valid only for ROWS.
