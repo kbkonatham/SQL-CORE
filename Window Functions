@@ -27,3 +27,10 @@ CUME_DIST (Transact-SQL)   CUME_DIST computes the relative position of a specifi
  LAG(order_date,1)       OVER(ORDER BY order_date) prev_order_date
  FIRST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) first_order_date,
 LAST_VALUE(order_date)   OVER(PARTITION BY city ORDER BY city) last_order_date
+
+
+       CUME_DIST () OVER (PARTITION BY Department ORDER BY Rate) AS CumeDist, 
+       PERCENT_RANK() OVER (PARTITION BY Department ORDER BY Rate ) AS PctRank
+
+       PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ph.Rate)  OVER (PARTITION BY Name) AS MedianCont
+       PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY ph.Rate) OVER (PARTITION BY Name) AS MedianDisc
