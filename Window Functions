@@ -19,6 +19,10 @@ NTILE(4) OVER(ORDER BY order_amount) [row_number]
 
 Value Window Functions
 LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+PERCENTILE_CONT (Transact-SQL)
+PERCENTILE_DISC (Transact-SQL)
+PERCENT_RANK (Transact-SQL)
+CUME_DIST (Transact-SQL)   CUME_DIST computes the relative position of a specified value in a group of values
 
  LAG(order_date,1)       OVER(ORDER BY order_date) prev_order_date
  FIRST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) first_order_date,
