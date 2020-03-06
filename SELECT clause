@@ -1,0 +1,23 @@
+SELECT clause is step 8, any column aliases or derived columns defined in that clause cannot be referenced by preceding clauses. However, they can be referenced by subsequent clauses such as the ORDER BY clause
+
+FROM
+
+ON
+
+JOIN
+
+WHERE
+
+GROUP BY
+
+WITH CUBE or WITH ROLLUP
+
+HAVING
+
+SELECT
+
+DISTINCT
+
+ORDER BY
+
+TOP
