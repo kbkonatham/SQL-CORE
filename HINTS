@@ -1,0 +1,105 @@
+HINTS
+
+JOIN Hints applies to:
+select ,update,delete
+
+<join_hint> ::=    { LOOP | HASH | MERGE | REMOTE }
+ OPTION({ LOOP | HASH | MERGE | REMOTE } JOIN)
+
+		QUERY Hint applies to :
+		----------------------------------
+select ,insert,update,delete, merge
+https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/ms181714(v%3dsql.110)
+<query_hint > ::= 
+{ { HASH | ORDER } GROUP 
+  | { CONCAT | HASH | MERGE } UNION 
+  | { LOOP | MERGE | HASH } JOIN 
+  | EXPAND VIEWS 
+  | FAST number_rows 
+  | FORCE ORDER 
+  | IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX
+  | KEEP PLAN 
+  | KEEPFIXED PLAN
+  | MAXDOP number_of_processors 
+  | MAXRECURSION number 
+  | OPTIMIZE FOR ( @variable_name { UNKNOWN | = literal_constant } [ , ...n ] )
+  | OPTIMIZE FOR UNKNOWN
+  | PARAMETERIZATION { SIMPLE | FORCED }
+  | RECOMPILE
+  | ROBUST PLAN 
+  | USE PLAN N'xml_plan'
+  | TABLE HINT ( exposed_object_name [ , <table_hint> [ [, ]...n ] ] )
+}
+
+<table_hint> ::=
+[ NOEXPAND ] { 
+    INDEX ( index_value [ ,...n ] ) | INDEX = ( index_value )
+  | FORCESEEK [( index_value ( index_column_name [,... ] ) ) ]
+  | FORCESCAN
+  | HOLDLOCK 
+  | NOLOCK 
+  | NOWAIT
+  | PAGLOCK 
+  | READCOMMITTED 
+  | READCOMMITTEDLOCK 
+  | READPAST 
+  | READUNCOMMITTED 
+  | REPEATABLEREAD 
+  | ROWLOCK 
+  | SERIALIZABLE 
+  | SPATIAL_WINDOW_MAX_CELLS = integer
+  | TABLOCK 
+  | TABLOCKX 
+  | UPDLOCK 
+  | XLOCK
+}
+
+
+TABLE
+select ,insert,update,delete, merge
+WITH  ( <table_hint> [ [, ]...n ] )
+
+<table_hint> ::= 
+[ NOEXPAND ] { 
+    INDEX  ( index_value [ ,...n ] ) | INDEX =  ( index_value )    | FORCESEEK [( index_value ( index_column_name  [ ,... ] ) ) ]
+  | FORCESCAN
+  | FORCESEEK
+  | HOLDLOCK 
+  | NOLOCK 
+  | NOWAIT
+  | PAGLOCK 
+  | READCOMMITTED 
+  | READCOMMITTEDLOCK 
+  | READPAST 
+  | READUNCOMMITTED 
+  | REPEATABLEREAD 
+  | ROWLOCK 
+  | SERIALIZABLE 
+  | SPATIAL_WINDOW_MAX_CELLS = integer
+  | TABLOCK 
+  | TABLOCKX 
+  | UPDLOCK 
+  | XLOCK 
+} 
+
+<table_hint_limited> ::=
+{
+    KEEPIDENTITY 
+  | KEEPDEFAULTS 
+  | HOLDLOCK 
+  | IGNORE_CONSTRAINTS 
+  | IGNORE_TRIGGERS 
+  | NOLOCK 
+  | NOWAIT
+  | PAGLOCK 
+  | READCOMMITTED 
+  | READCOMMITTEDLOCK 
+  | READPAST 
+  | REPEATABLEREAD 
+  | ROWLOCK 
+  | SERIALIZABLE 
+  | TABLOCK 
+  | TABLOCKX 
+  | UPDLOCK 
+  | XLOCK 
+} 
