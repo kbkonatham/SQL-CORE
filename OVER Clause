@@ -22,7 +22,7 @@ ORDER BY order_by_expression
 {   <window frame preceding>
   | <window frame between>
 }
-
+     
 <window frame between> ::= 
   BETWEEN <window frame bound> AND <window frame bound>
 
