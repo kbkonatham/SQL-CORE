@@ -1,0 +1,4 @@
+The APPLY operator is a very powerful table operator. Like all table operators, this operator is used
+in the FROM clause of a query. The two supported types of APPLY operator are CROSS APPLY and
+OUTER APPLY. CROSS APPLY implements only one logical query processing phase, whereas OUTER
+APPLY implements two.
