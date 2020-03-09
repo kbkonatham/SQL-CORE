@@ -6,6 +6,8 @@ OVER (
        [ <ROW or RANGE clause> ]
       ) 
 
+
+
 <PARTITION BY clause> ::=
 PARTITION BY value_expression , ... [ n ]
 
@@ -48,7 +50,8 @@ ORDER BY order_by_expression
 <unsigned value specification> ::= 
 {  <unsigned integer literal> }
 
-
+window, a window frame clause (ROWS BETWEEN <top
+delimiter> AND <bottom delimiter>) filters a frame,
 
 UNBOUNDED PRECEDING
 Specifies that the window starts at the first row of the partition. UNBOUNDED PRECEDING can only be specified as window starting point.
