@@ -1,5 +1,7 @@
 https://www.sqlshack.com/use-window-functions-sql-server/
 
+The subset of rows is known as a window and is based on a window descriptor that relates to the current row. 
+The syntax for window functions uses a clause called OVER, in which you provide the window specification.
 
 SELECT city, SUM(order_amount) total_order_amount
 FROM [dbo].[Orders] GROUP BY city
