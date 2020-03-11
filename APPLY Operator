@@ -1,6 +1,7 @@
  Is used to join a table to a table-valued function.
+ in the form of corelated sub query we get error .
  
-The APPLY operator is a very powerful table operator.
+
 CROSS APPLY = inner join.
 OUTER APPLY= left outer join.
 
