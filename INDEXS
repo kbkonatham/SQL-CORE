@@ -1,0 +1,70 @@
+The non-clustered indexes on a heap will use the fill factor, but a heap is not an index (although it does appear in sys. indexes ). Since there is no way to reorganize a heap it can't have a fill factor. Fill factor only comes into the picture when rebuilding or creating an index; it only applies to indexes
+
+
+select * form emp (100 rows)
+table scan , linear search 
+select * form emp where empno=7369 (1 rows)
+table scan
+
+index  reduces the logical reads,leads to increases  the performances of fetching the records.
+
+ select * form emp where empno=7369 (1 rows) (index seek) 
+
+index used double linked list data structure 
+
+best option for create index  on table column 
+ Fixed with columns   Int
+                                 numeric
+bad option  for create index on  table column
+    newid()
+    natural keys (ssid no,addar,pancard no)
+lead to fragmentation level ( page splits)
+
+--Syntax :
+create clustered index ix_emp_empno on emp_index(empno)--- (16  columns)
+
+--- too many columns in index  increases the  index maintenance cost
+
+create nonclustered index ix_emp_deptno_include on emp_index(deptno) 
+
+--- include (ename,job)--  include index
+--- where deptno=10---  filter index
+
+
+
+Fill factor  (its helps us to slowing down the frage)
+--------------------
+ 1) 5-30%  :  Reorganizing the Index ( arrange the data in the data pages )
+    alter index ix_emp_empno on emp reorganize
+    
+ 2) <30%  :  Rebuilding the Index ( drop and re-create the index)
+      alter index ix_emp_empno on emp  rebuild
+      
+  
+create  unique index ix_emp_empno  on emp(empno)
+with (fillfactor=80, pad_index=on);
+         pad_indec  is for  indexpages  
+
+Index usage in  class
+--------------------------
+from (IX)           index (seek,scan)
+on  (IX)     
+join-----------
+where (IX)    
+group by (IX)      (stream,hash) aggregate
+having-----------
+cube/rollup
+select (IX) ------ covering index onealy for display purous, not suitable for  join and where claues 
+distinct--(IX)     sort remove duplicates 
+top 
+order by (IX)      sort the data 
+      if source  is sort the  data based on the  required column then no need  to sort the date again. 
+
+Write operation
+----------------------
+insert  
+update (Fetch and Update)
+delete (Fetch and Delete)
+
+too many indexes reduces the performance   of dml operations because  update index pages also.
+no index also reduces the  performance.
