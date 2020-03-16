@@ -20,7 +20,7 @@ index  reduces the logical reads,leads to increases  the performances of fetchin
 index used double linked list data structure 
 
 best option for create index  on table column 
- Fixed with columns   Int
+ Fixed with columns   Int 
                                  numeric
 bad option  for create index on  table column
     newid()
