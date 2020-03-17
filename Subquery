@@ -1,7 +1,27 @@
 A subquery nested in the outer SELECT statement has the following components:
 
+The SELECT query of a subquery is always enclosed in parentheses. It cannot include a COMPUTE or FOR BROWSE clause, and may only include an ORDER BY clause when a TOP clause is also specified.
+
+
 A regular SELECT query including the regular select list components.
 A regular FROM clause including one or more table or view names.
 An optional WHERE clause.
 An optional GROUP BY clause.
 An optional HAVING clause.
+
+A subquery can be nested inside the WHERE or HAVING clause of an outer SELECT, INSERT, UPDATE, or DELETE statement, 
+
+Up to 32 levels of nesting is possible, although the limit varies based on available memory and the complexity of other expressions in the query
+
+Subquery rules
+A subquery is subject to the following restrictions:
+
+The select list of a subquery introduced with a comparison operator can include only one expression or column name (except that EXISTS and IN operate on SELECT * or a list, respectively).
+If the WHERE clause of an outer query includes a column name, it must be join-compatible with the column in the subquery select list.
+The ntext, text, and image data types cannot be used in the select list of subqueries.
+Because they must return a single value, subqueries introduced by an unmodified comparison operator (one not followed by the keyword ANY or ALL) cannot include GROUP BY and HAVING clauses.
+The DISTINCT keyword cannot be used with subqueries that include GROUP BY.
+The COMPUTE and INTO clauses cannot be specified.
+ORDER BY can only be specified when TOP is also specified.
+A view created by using a subquery cannot be updated.
+The select list of a subquery introduced with EXISTS, by convention, has an asterisk (*) instead of a single column name. The rules for a subquery introduced with EXISTS are the same as those for a standard select list, because a subquery introduced with EXISTS creates an existence test and returns TRUE or FALSE, instead of data.
