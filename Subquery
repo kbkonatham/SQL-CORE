@@ -1,0 +1,7 @@
+A subquery nested in the outer SELECT statement has the following components:
+
+A regular SELECT query including the regular select list components.
+A regular FROM clause including one or more table or view names.
+An optional WHERE clause.
+An optional GROUP BY clause.
+An optional HAVING clause.
