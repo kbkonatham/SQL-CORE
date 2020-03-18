@@ -1,0 +1,29 @@
+https://www.c-sharpcorner.com/UploadFile/a20beb/after-trigger-vs-instead-of-trigger-in-sql-server/
+
+This article explains the "After Trigger" and "Instead of Trigger" using an example and the differences between them but first you need to look at an overview of both.
+ 
+After Trigger in SQL Server
+ 
+These kinds of triggers fire after the execution of an action query that can be either DDL statements like Create, Alter and Drop or DML statements like Insert, Update and Delete.
+ 
+Instead of Trigger in SQL Server
+ 
+These kinds of triggers fire before the execution of an action query that can only be DML statements like Insert, Update and Delete but after the execution of that query. The table data will not be affected, in other words if you want to insert or update the data of the table then you need to write it in the trigger using "inserted" or "deleted" virtual tables.
+ 
+Syntax of Trigger
+CREATE TRIGGER trigger_name ON {table|view}  
+[WITH ENCRYPTION|EXECUTE AS]  
+{FOR|AFTER|INSTEAD OF} {[CREATE|ALTER|DROP|INSERT|UPDATE|DELETE ]}  
+[NOT FOR REPLICATION]  
+AS  
+sql_statement [1...n ] 
+Use the following procedure to understand the differences between them.
+ 
+Step 1: Create a schema of a table named "Employee" in the database for performiing an action such as insert.
+create table Employee  
+(  
+ID int primary key,  
+Name varchar(20),  
+Salary float,  
+Department varchar(20)  
+)
