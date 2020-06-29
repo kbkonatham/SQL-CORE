@@ -1,5 +1,5 @@
 
-<OUTPUT_CLAUSE> ::=
+<OUTPUT_CLAUSE> ::= 
 {
     [ OUTPUT <dml_select_list> INTO { @table_variable | output_table } [ ( column_list ) ] ]
     [ OUTPUT <dml_select_list> ]
