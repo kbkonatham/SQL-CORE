@@ -12,4 +12,4 @@ OUTER APPLY.
 
 CROSS APPLY implements only one logical query processing phase,
 
-whereas OUTER APPLY implements two.
+whereas OUTER APPLY implements two. 
