@@ -6,7 +6,7 @@ The non-clustered indexes on a heap will use the fill factor, but a heap is not 
 --https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver15
 
 An index is an on-disk structure associated with a table or view that speeds retrieval of rows from the table or view. An index contains keys built from one or more columns in the table or view. These keys are stored in a structure (B-tree) that enables SQL Server to find the row or rows associated with the key values quickly and efficiently.
-
+    
 
 select * form emp (100 rows)
 table scan , linear search 
