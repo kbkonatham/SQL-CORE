@@ -1,6 +1,6 @@
 HINTS
 
-JOIN Hints applies to:  
+JOIN Hints applies  to:  
 select ,update,delete
 
 <join_hint> ::=    { LOOP | HASH | MERGE | REMOTE }
