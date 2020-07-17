@@ -1,0 +1,34 @@
+When an operator combines expressions of different data types, the data type with the lower precedence is first converted to the data type with the higher precedence. If the conversion isn't a supported implicit conversion, an error is returned. For an operator combining operand expressions having the same data type, the result of the operation has that data type.
+
+SQL Server uses the following precedence order for data types:
+
+user-defined data types (highest)
+sql_variant
+xml
+datetimeoffset
+datetime2
+datetime
+smalldatetime
+date
+time
+float
+real
+decimal
+money
+smallmoney
+bigint
+int
+smallint
+tinyint
+bit
+ntext
+text
+image
+timestamp
+uniqueidentifier
+nvarchar (including nvarchar(max) )
+nchar
+varchar (including varchar(max) )
+char
+varbinary (including varbinary(max) )
+binary (lowest)
