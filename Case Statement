@@ -1,16 +1,35 @@
 https://www.sqlshack.com/case-statement-in-sql/
 https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?view=sql-server-ver15
 
+CASE can be used in any statement or clause that allows a valid expression. 
+For example, you can use CASE in statements such as 
 
-select
-where
-groupby
-having
+
+
+insert       
+            values( @no , case when @gender=0 then 'F'
+                                      when @gender=0 then 'F' end 
+                            @sal
+                   )
+
+UPDATE set gender=(case when gender='F' then 'M' else 'F' end)
+
+ --from , on , join , where , group by , having, select , distinct , top , order by 
+ 
+select     derived column
+where      derived column
+group by   derived column
+having     derived column
+
 order by 
+                 1) ( case when city='hyd' then 1 when city='Amaravathi' then 2 ) --- in general terms 1) Amaravathi, 2) hyd 
 
----write-----
-Insert 
-Update
+                 2)  SELECT BusinessEntityID, SalariedFlag  
+                     FROM HumanResources.Employee  
+                     ORDER BY CASE SalariedFlag WHEN 1 THEN BusinessEntityID END DESC  
+                              ,CASE WHEN SalariedFlag = 0 THEN BusinessEntityID END;  
+
+
 
 
                  -------Case Statement limitations-------------
