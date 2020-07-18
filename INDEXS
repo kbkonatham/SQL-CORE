@@ -24,7 +24,7 @@ best option for create index  on table column
                                  numeric
 bad option  for create index on  table column
     newid()
-    natural keys (ssid no,addar,pancard no)
+    natural keys (ssid no,addar,pancard no,passport,voterid )
 lead to fragmentation level ( page splits)
 
 --Syntax  :
