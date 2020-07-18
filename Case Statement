@@ -1,0 +1,26 @@
+https://www.sqlshack.com/case-statement-in-sql/
+https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?view=sql-server-ver15
+
+
+select
+where
+groupby
+having
+order by 
+
+---write-----
+Insert 
+Update
+
+
+                 -------Case Statement limitations-------------
+
+We cannot control the execution flow of stored procedures, functions using a Case statement in SQL
+
+We can have multiple conditions in Case statement; however, it works in a sequential model. If one condition is satisfied, it stops checking further conditions
+
+We cannot use a Case statement for checking NULL values in a table
+                 
+                 --------------------------------Conclusion-------------------------
+
+The Case statement in SQL provides flexibility in writing t-SQL for DDL and DML queries. It also adds versatility to SQL Server queries. You should practice Case statement in your queries.
