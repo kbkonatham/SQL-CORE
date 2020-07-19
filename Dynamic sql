@@ -1,0 +1,16 @@
+-- dynamic sql--
+declare @no int,@name varchar(20),@deptno int=10
+select * from emp where 1=1 
+and (empno=@no or @no is null)
+and (DEPTNO=@DEPTNO or @deptno is null)
+
+go
+declare @sql nvarchar(500)
+declare @params nvarchar(500)
+
+set @sql='select * from emp '+ ' where ename=@ename or deptno=@deptno'
+set @params='@ename nvarchar(100),@deptno int'
+--print @sql 
+
+--exec sp_executesql @sql
+EXEC sp_executesql @sql,@params,@ename='smith',@deptno=10
