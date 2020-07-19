@@ -1,0 +1,63 @@
+https://sqltechblog.com/2017/08/31/sql-server-sargability/
+https://www.youtube.com/watch?v=cyK9wXYL2R4
+
+----------Nulls---------------
+assume all columns are allow null values
+
+types of data 1)true 2)false 3)unkown
+nulls are not compare by using logical operators.
+
+null<>null(unknown value as false)
+on
+where
+having
+
+null=null
+group by
+
+	select count(no)  from  emp_null
+	group by no
+
+order by
+            ascending order  all nulls are come first
+            descending           all nulls are come last
+
+ set operators
+
+
+----null valus treated as true check cinstraint----
+
+check constraint all null valus
+create table emp_null(no int ,age int check (age>10 and age <60))
+insert into emp_null values (1,40)
+insert into emp_null(no) values (2) --- check constraint allow null as true
+
+-----sargability -------
+ =  operator we cant compare two nulls
+but is we can  compare
+
+intersect vs collace
+
+
+===
+null in while
+condition is true continue
+ condition is false come out from loop
+
+
+null in if else
+
+condition is true  go to if block
+ condition is false come  else block
+
+
+
+case
+conditon is true  go to 
+conditon is flase go to else block
+
+ merge
+
+unique constraint  allow one null 
+
+
