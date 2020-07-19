@@ -1,6 +1,9 @@
+https://www.red-gate.com/simple-talk/sql/sql-training/subqueries-in-sql-server/
+
 A subquery nested in the outer SELECT statement has the following components:
 
-The SELECT query of a subquery is always enclosed in parentheses. It cannot include a COMPUTE or FOR BROWSE clause, and may only include an ORDER BY clause when a TOP clause is also specified.
+The SELECT query of a subquery is always enclosed in parentheses. It cannot include a COMPUTE or FOR BROWSE clause, 
+and may only include an ORDER BY clause when a TOP clause is also specified.
 
 
 A regular SELECT query including the regular select list components.
