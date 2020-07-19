@@ -1,0 +1,6 @@
+begin try
+select 1/0
+end try
+begin catch
+select ERROR_LINE() line ,ERROR_MESSAGE() messa,ERROR_NUMBER() err_no,ERROR_SEVERITY()err_seve,ERROR_STATE() stat
+end catch
