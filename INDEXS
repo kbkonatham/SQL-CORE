@@ -59,7 +59,7 @@ Index usage in  class
 --------------------------
 from (IX)           index (seek,scan)
 on  (IX)     
-join-----------
+join----------- (loop ,merge, hash) join 
 where (IX)    
 group by (IX)      (stream,hash) aggregate
 having-----------
